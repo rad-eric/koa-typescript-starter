@@ -1,0 +1,10 @@
+*{
+    color: blue;
+}
+#logo{
+    background-image: url("/images/nasa.png");
+    background-size: contain;
+    width: auto;
+    height: 100px;
+    background-repeat: no-repeat;
+}

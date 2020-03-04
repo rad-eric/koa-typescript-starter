@@ -1,0 +1,10 @@
+*{
+    color: red;
+}
+#logo{
+    background-image: url("/images/dominos.jpg");
+    background-size: contain;
+    width: auto;
+    height: 100px;
+    background-repeat: no-repeat;
+}

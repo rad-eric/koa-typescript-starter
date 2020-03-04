@@ -1,0 +1,72 @@
+<!-- layout.html -->
+{% extends '../layout.html' %}
+<!-- title -->
+{% block title %}Products{% endblock %}
+<!-- content -->
+{% block content%}
+
+<div>
+  <h3>Cart</h3>
+  <pre>
+    {{checkout.webUrl}}
+  </pre>
+  <ul id="cart-items">
+    {% for lineItem in checkout.lineItems %}
+    <li>{{lineItem.title}} - {{lineItem.variant.title}} ({{lineItem.quantity}})</li>
+    {%endfor%}
+  </ul>
+  <div>
+      Total: <strong id="totalPrice">{{checkout.totalPrice}}</strong>
+  </div>
+  <button
+        onclick="checkout()"
+        class="mdc-button foo-button"
+      >
+        <div class="mdc-button__ripple"></div>
+        <span class="mdc-button__label">Checkout </span>
+      </button>
+</div>
+{% for product in data.products %}
+<div>
+  <h3 class="mdc-typography--headline3">{{product.title}}</h3>
+  {{product.descriptionHtml | safe}}
+  <ul class="mdc-image-list my-image-list">
+    {% for image in product.images %}
+    <li class="mdc-image-list__item">
+      <div class="mdc-image-list__image-aspect-container">
+        <img
+          class="mdc-image-list__image"
+          src="{{image.src}}"
+          alt="{{image.altText}}"
+        />
+      </div>
+      <div class="mdc-image-list__supporting">
+        <span class="mdc-image-list__label"
+          >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span
+        >
+        <span class="mdc-image-list__label"
+          >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span
+        >
+      </div>
+    </li>
+
+    {%endfor%}
+  </ul>
+
+  <div>
+    {% for variant in product.variants %}
+    <div>
+      {{variant.title}} - ${{variant.price}}
+      <button
+        onclick="addProduct('{{variant.id}}',1)"
+        class="mdc-button foo-button"
+      >
+        <div class="mdc-button__ripple"></div>
+        <span class="mdc-button__label">Add to Cart </span>
+      </button>
+    </div>
+
+    {% endfor %}
+  </div>
+</div>
+{% endfor %} {% endblock %}

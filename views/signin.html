@@ -1,0 +1,26 @@
+<!-- layout.html -->
+{% extends './layout.html' %}
+<!-- title -->
+{% block title %}Sign In{% endblock %}
+<!-- content -->
+{% block content%}
+<h3>Signin</h3>
+<!-- The surrounding HTML is left untouched by FirebaseUI.
+     Your app may use that space for branding, controls and other customizations.-->
+<h1>Welcome to My Awesome App</h1>
+<div id="firebaseui-auth-container"></div>
+<form action="/signin" method="POST">
+    <div>
+        <label for="email">Email</label>
+        <input type="text" name="email" placeholder="bob@email.com"/>
+    </div>
+    <div>
+        <label for="password">Email</label>
+        <input type="password" name="password" />
+    </div>
+    <div>
+        <button type="submit">Signin</button>
+    </div>
+    
+</form>
+{% endblock %}

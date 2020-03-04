@@ -1,3 +1,12 @@
+```
+https://{shop}.myshopify.com/admin/oauth/authorize?client_id={api_key}&scope={scopes}&redirect_uri={redirect_uri}&state={nonce}&grant_options[]={access_mode}
+
+https://erics-rad-store.myshopify.com/admin/oauth/authorize?client_id=8d88f1fa1a4fe7227ec60dce973a3c22&scope=read_fulfillments,read_orders,read_product_listings,read_products,write_products,read_themes,write_themes,read_reports,write_reports,read_checkouts,write_checkouts,read_inventory,read_orders,write_orders,read_product_listings&redirect_uri=https://rad-eric.ngrok.io/installed
+
+
+```
+
+
 # KOA2 TypeScript Starter
 
 [![Build Status](https://travis-ci.org/ddimaria/koa-typescript-starter.svg?branch=develop)](https://travis-ci.org/ddimaria/koa-typescript-starter)

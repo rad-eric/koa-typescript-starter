@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>RPB Vendor's Store | {}</title>
+    <link href="/css/{{vendor.id}}.css" rel="stylesheet"/>
+    <link
+      href="https://unpkg.com/material-components-web@v4.0.0/dist/material-components-web.min.css"
+      rel="stylesheet"
+    />
+    <script src="https://unpkg.com/material-components-web@v4.0.0/dist/material-components-web.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto:300,400,500"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.2/axios.js"
+    />
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/7.9.3/firebase-app.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/7.9.3/firebase-analytics.js"></script>
+
+    <script>
+      // Your web app's Firebase configuration
+      var firebaseConfig = {
+        apiKey: 'AIzaSyA43_uAjE1wJe5w-AXg_xJNW20h7D0st4E',
+        authDomain: 'vendorportal.firebaseapp.com',
+        databaseURL: 'https://vendorportal.firebaseio.com',
+        projectId: 'vendorportal',
+        storageBucket: 'vendorportal.appspot.com',
+        messagingSenderId: '222462781467',
+        appId: '1:222462781467:web:04903106a4e1164a82b0be',
+        measurementId: 'G-R7SXQ40ZMC'
+      };
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+      firebase.analytics();
+    </script>
+    <script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
+    <link
+      type="text/css"
+      rel="stylesheet"
+      href="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.css"
+    />
+    <script src="/js/main.js"></script>
+    <style>
+      .mdc-image-list__image {
+        height: initial !important;
+      }
+    </style>
+  </head>
+  <body class="mdc-typography">
+    <!-- header -->
+    {% block header %}{% include 'partials/header.html' %}{% endblock %}
+    <!-- content -->
+
+    {% block content %}
+    
+    <p>Missing content!</p>
+    {% endblock %}
+    <!-- footer -->
+    {% block footer %}{% include 'partials/footer.html' %}{% endblock %}
+  </body>
+</html>
