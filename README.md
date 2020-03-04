@@ -1,11 +1,27 @@
+# DEV
+1. `mv app/config/serviceAccountKey.sample.json app/config/serviceAccountKey.json` - and populate according to correct firebase configs (1Password)
+2. `mv ./env.sample ./.env` - fill out with proper creds from  1password
+3. `npm i`
+4. `npm run watch`
+
+for frontend js, in another tab
+
+`npm run webpack-watch`
+
 ```
 https://{shop}.myshopify.com/admin/oauth/authorize?client_id={api_key}&scope={scopes}&redirect_uri={redirect_uri}&state={nonce}&grant_options[]={access_mode}
 
-https://erics-rad-store.myshopify.com/admin/oauth/authorize?client_id=8d88f1fa1a4fe7227ec60dce973a3c22&scope=read_fulfillments,read_orders,read_product_listings,read_products,write_products,read_themes,write_themes,read_reports,write_reports,read_checkouts,write_checkouts,read_inventory,read_orders,write_orders,read_product_listings&redirect_uri=https://rad-eric.ngrok.io/installed
+https://erics-rad-store.myshopify.com/admin/oauth/authorize?client_id=xxx&scope=read_fulfillments,read_orders,read_product_listings,read_products,write_products,read_themes,write_themes,read_reports,write_reports,read_checkouts,write_checkouts,read_inventory,read_orders,write_orders,read_product_listings&redirect_uri=https://rad-eric.ngrok.io/installed
 
 
 ```
-
+# DEPLOY
+```
+update .env for prod urls, etc
+docker-machine create --driver amazonec2 --amazonec2-open-port 8000 --amazonec2-region us-west-2 rpb-poc-vendorportal
+eval $(docker-machine env rpb-poc-vendorportal)
+docker-compose up --build -d
+```
 
 # KOA2 TypeScript Starter
 
